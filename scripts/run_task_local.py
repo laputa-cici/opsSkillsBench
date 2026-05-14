@@ -66,18 +66,66 @@ def copy_tree_contents(src: Path, dst: Path) -> None:
             target.write_bytes(item.read_bytes())
 
 
+def discover_task_dirs() -> dict[str, Path]:
+    # A benchmark task is any directory that owns a task.toml. This supports
+    # both legacy flat tasks and the new tasks/<domain>/<task-id>/ layout.
+    discovered = {}
+    for task_file in TASKS_DIR.rglob("task.toml"):
+        task_path = task_file.parent
+        rel_name = task_path.relative_to(TASKS_DIR).as_posix()
+        discovered[rel_name] = task_path
+    return dict(sorted(discovered.items()))
+
+
 def task_dir(task_name: str) -> Path:
-    # 根据任务名定位目录；如果不存在，就给出可用任务列表。
-    path = TASKS_DIR / task_name
-    if not path.exists():
-        known = sorted(p.name for p in TASKS_DIR.iterdir() if p.is_dir())
-        raise SystemExit(f"Unknown task '{task_name}'. Available tasks: {', '.join(known)}")
-    return path
+    # 根据任务名定位目录；支持完整相对路径，也支持唯一的 basename。
+    discovered = discover_task_dirs()
+    if task_name in discovered:
+        return discovered[task_name]
+
+    matches = [path for name, path in discovered.items() if Path(name).name == task_name]
+    if len(matches) == 1:
+        return matches[0]
+    if len(matches) > 1:
+        names = sorted(name for name in discovered if Path(name).name == task_name)
+        raise SystemExit(f"Ambiguous task '{task_name}'. Use one of: {', '.join(names)}")
+
+    known = sorted(discovered)
+    raise SystemExit(f"Unknown task '{task_name}'. Available tasks: {', '.join(known)}")
 
 
 def all_task_names() -> list[str]:
     # 固定排序，方便批量运行结果在不同执行之间对比。
-    return sorted(p.name for p in TASKS_DIR.iterdir() if p.is_dir())
+    return sorted(discover_task_dirs())
+
+
+def parent_task_name(task: Path) -> str | None:
+    # Lightweight atomic tasks can inherit data/skills/oracle assets from a
+    # scenario-level parent while keeping their own instruction and verifier.
+    task_file = task / "task.toml"
+    if not task_file.exists():
+        return None
+    match = re.search(r'^parent_task\s*=\s*"([^"]+)"', task_file.read_text(encoding="utf-8"), flags=re.M)
+    return match.group(1) if match else None
+
+
+def inherited_task_dir(task: Path) -> Path | None:
+    parent_name = parent_task_name(task)
+    if not parent_name:
+        return None
+    return task_dir(parent_name)
+
+
+def inherited_asset_dir(task: Path, relative_path: str) -> Path:
+    local = task / relative_path
+    if local.exists():
+        return local
+    parent = inherited_task_dir(task)
+    if parent is not None:
+        inherited = parent / relative_path
+        if inherited.exists():
+            return inherited
+    return local
 
 
 def patch_text_paths(text: str, task_name: str) -> str:
@@ -93,7 +141,7 @@ def patch_text_paths(text: str, task_name: str) -> str:
 def prepare(task_name: str) -> None:
     # 把任务所需的数据和测试文件准备到本地运行目录中。
     task = task_dir(task_name)
-    data_src = task / "environment" / "data"
+    data_src = inherited_asset_dir(task, "environment/data")
     tests_src = task / "tests"
 
     app = app_root(task_name)
@@ -140,7 +188,7 @@ def extract_embedded_python(solve_sh: Path) -> str:
 def run_oracle(task_name: str) -> None:
     # 在仓库内的本地运行目录上执行任务自带的 oracle 解。
     task = task_dir(task_name)
-    solve_sh = task / "solution" / "solve.sh"
+    solve_sh = inherited_asset_dir(task, "solution/solve.sh")
     if not solve_sh.exists():
         raise SystemExit(f"Missing oracle script: {solve_sh}")
 

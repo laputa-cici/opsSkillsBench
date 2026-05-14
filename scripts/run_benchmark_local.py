@@ -9,7 +9,7 @@ from pathlib import Path
 from adapters.claude_adapter import run_claude
 from adapters.codex_adapter import run_codex
 from adapters.common import AgentRunRequest
-from run_task_local import all_task_names, app_root, prepare, run_tests, runtime_root, task_dir
+from run_task_local import all_task_names, app_root, inherited_asset_dir, prepare, run_tests, runtime_root, task_dir
 
 
 # benchmark 级结果统一放在项目目录内，便于后续论文实验归档。
@@ -33,7 +33,7 @@ def build_prompt(task_name: str, skill_condition: str, run_dir: Path) -> str:
 
     runtime_data_dir = app_root(task_name) / "data"
     runtime_output_dir = app_root(task_name) / "output"
-    skills_dir = task_path / "environment" / "skills"
+    skills_dir = inherited_asset_dir(task_path, "environment/skills")
     agent_artifacts_dir = run_dir / "agent_artifacts"
     agent_artifacts_dir.mkdir(parents=True, exist_ok=True)
 

@@ -1,0 +1,32 @@
+schema_version = "1.1"
+
+[task]
+name = "ops/scheduling/orlib-bottleneck-action-plan"
+description = "Identify the bottleneck machine and map tardy jobs to recovery actions and owners."
+authors = [{ name = "OpsSkillsBench", email = "support@example.com" }]
+keywords = ["operations", "manufacturing", "bottleneck", "recovery"]
+
+[metadata]
+domain = "operations-management"
+problem_domain = "scheduling"
+difficulty = "hard"
+status = "runnable_external_source"
+atomic_task = true
+parent_task = "orlib-disruption-recovery-control"
+dataset_sources = ["or-library-jobshop"]
+skill_candidates = ["capacity-planning", "operations-manager", "supply-chain-manager"]
+expected_outputs = ["/app/output/bottleneck_report.json", "/app/output/recovery_action_plan.csv"]
+source_note = "Atomic task split from orlib-disruption-recovery-control; provenance and deterministic source slice are inherited from the parent task."
+
+[agent]
+timeout_sec = 300.0
+
+[verifier]
+timeout_sec = 300.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 1024
+allow_internet = false
+skills_dir = "/opt/skills"

@@ -1,0 +1,32 @@
+schema_version = "1.1"
+
+[task]
+name = "ops/procurement/portland-supplier-action-plan"
+description = "Map category concentration and procurement anti-patterns to supplier actions."
+authors = [{ name = "OpsSkillsBench", email = "support@example.com" }]
+keywords = ["operations", "procurement", "supplier-management", "mitigation"]
+
+[metadata]
+domain = "operations-management"
+problem_domain = "procurement"
+difficulty = "hard"
+status = "runnable_external_source"
+atomic_task = true
+parent_task = "portland-sourcing-concentration-review"
+dataset_sources = ["open-contracting-portland"]
+skill_candidates = ["supply-chain-manager", "operations-manager", "procurement-review"]
+expected_outputs = ["/app/output/supplier_action_plan.csv"]
+source_note = "Atomic task split from portland-sourcing-concentration-review; provenance and deterministic source slice are inherited from the parent task."
+
+[agent]
+timeout_sec = 300.0
+
+[verifier]
+timeout_sec = 300.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 1024
+allow_internet = false
+skills_dir = "/opt/skills"

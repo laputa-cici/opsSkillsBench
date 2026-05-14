@@ -37,7 +37,17 @@
 - `OpenClaw`
 - 后续可扩展到其他 agent 框架
 
-## 当前任务队列
+## 题目结构
+
+仓库现在把“问题域”和“具体题目”分开：
+
+- 旧的场景级任务仍保留在 `tasks/<scenario-task>/`，用于兼容已有实验记录。
+- 新的可扩展原子题放在 `tasks/<problem-domain>/<task-id>/`。
+- runner 会递归发现 `tasks/` 下任意深度包含 `task.toml` 的目录，并把它计为一个独立题目。
+
+这样一个问题域下面可以有很多独立题目。例如 `fulfillment` 领域里，订单风险动作、线路风险登记、scorecard 汇总会作为三个独立 task 计数，而不是藏在一个大题的多个子测试里。
+
+## 当前问题域
 
 | 任务 | 数据集来源 | 外部 skill 候选 | 状态 |
 | --- | --- | --- | --- |
@@ -45,6 +55,15 @@
 | `dataco-control-tower-exception-review` | DataCo SMART Supply Chain | `supply-chain-manager`, `logistics-manager`, `operations-manager` | `runnable_external_source` |
 | `portland-sourcing-concentration-review` | Open Contracting / City of Portland | `supply-chain-manager`, `operations-manager`, `procurement-review` | `runnable_external_source` |
 | `orlib-disruption-recovery-control` | OR-Library Job Shop Scheduling | `capacity-planning`, `operations-manager`, `supply-chain-manager` | `runnable_external_source` |
+
+当前已拆出的原子题：
+
+| 问题域 | 原子题数量 |
+| --- | ---: |
+| `inventory` | 3 |
+| `fulfillment` | 3 |
+| `procurement` | 3 |
+| `scheduling` | 3 |
 
 可运行任务目录格式：
 
@@ -62,6 +81,12 @@ tasks/<task-id>/
 └── tests/
     ├── test.sh
     └── test_outputs.py
+```
+
+嵌套原子题使用同样结构：
+
+```text
+tasks/<problem-domain>/<task-id>/
 ```
 
 ## 外部来源
@@ -113,6 +138,7 @@ opsSkillsBench-main/
 
 ```bash
 .venv/bin/python scripts/run_task_local.py dataco-control-tower-exception-review --oracle --test
+.venv/bin/python scripts/run_task_local.py fulfillment/dataco-order-risk-actions --oracle --test
 ```
 
 ## Benchmark 模型参数

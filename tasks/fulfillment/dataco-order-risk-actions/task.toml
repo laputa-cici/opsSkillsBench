@@ -1,0 +1,32 @@
+schema_version = "1.1"
+
+[task]
+name = "ops/fulfillment/dataco-order-risk-actions"
+description = "Classify order-level delivery risk and map each order to a control-tower action."
+authors = [{ name = "OpsSkillsBench", email = "support@example.com" }]
+keywords = ["operations", "logistics", "fulfillment", "control-tower"]
+
+[metadata]
+domain = "operations-management"
+problem_domain = "fulfillment"
+difficulty = "hard"
+status = "runnable_external_source"
+atomic_task = true
+parent_task = "dataco-control-tower-exception-review"
+dataset_sources = ["dataco-smart-supply-chain"]
+skill_candidates = ["supply-chain-manager", "logistics-manager", "operations-manager"]
+expected_outputs = ["/app/output/control_tower_actions.csv"]
+source_note = "Atomic task split from dataco-control-tower-exception-review; provenance and deterministic source slice are inherited from the parent task."
+
+[agent]
+timeout_sec = 300.0
+
+[verifier]
+timeout_sec = 300.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 1024
+allow_internet = false
+skills_dir = "/opt/skills"
