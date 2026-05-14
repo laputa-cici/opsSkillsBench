@@ -1,0 +1,24 @@
+{
+  "name": "supply-chain-manager",
+  "status": "external_unmodified",
+  "imported_at_utc": "2026-04-07T02:36:00Z",
+  "marketplace": {
+    "name": "SkillsMP",
+    "url": "https://skillsmp.com/skills/theneoai-awesome-skills-skills-manufacturing-supply-chain-manager-skill-md"
+  },
+  "upstream": {
+    "repository": "https://github.com/theneoai/awesome-skills",
+    "commit": "10d1e09e3907265e38ab1e9c3d6e38efd6a41611",
+    "path": "skills/manufacturing/supply-chain-manager"
+  },
+  "license": {
+    "file": "LICENSE",
+    "signal": "MIT License with Attribution Requirement",
+    "required_attribution": "Based on Awesome Skills by neo.ai (lucas_hsueh@hotmail.com)"
+  },
+  "notes": [
+    "Vendored the upstream skill directory without content edits.",
+    "Use as a provided skill candidate for inventory, logistics, and supply-chain tasks."
+  ]
+}
+

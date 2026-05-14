@@ -1,0 +1,29 @@
+schema_version = "1.1"
+
+[task]
+name = "ops/orlib-disruption-recovery-control"
+description = "Repair a disrupted job-shop schedule from an OR-Library-derived instance and produce a bottleneck-focused recovery control plan."
+authors = [{ name = "OpsSkillsBench", email = "support@example.com" }]
+keywords = ["operations", "manufacturing", "job-shop", "scheduling", "capacity"]
+
+[metadata]
+domain = "operations-management"
+difficulty = "hard"
+status = "runnable_external_source"
+dataset_sources = ["or-library-jobshop"]
+skill_candidates = ["capacity-planning", "operations-manager", "supply-chain-manager"]
+expected_outputs = ["/app/output/recovery_schedule.csv", "/app/output/schedule_metrics.json", "/app/output/bottleneck_report.json", "/app/output/recovery_action_plan.csv"]
+source_note = "Runnable deterministic slice is derived from OR-Library jobshop1.txt instance ft06 via scripts/preprocess/build_orlib_disruption_recovery.py."
+
+[agent]
+timeout_sec = 600.0
+
+[verifier]
+timeout_sec = 450.0
+
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 2048
+allow_internet = false
+skills_dir = "/opt/skills"

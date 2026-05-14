@@ -1,0 +1,6 @@
+category,supplier_count,incumbent_supplier_count,criticality_score,competition_flag
+Emergency & Safety,5,2,5,limited_competition
+Office & Facilities,3,1,2,limited_competition
+Professional Services,5,3,3,limited_competition
+Road & Construction,5,1,5,competitive
+Technology & Equipment,5,1,5,limited_competition

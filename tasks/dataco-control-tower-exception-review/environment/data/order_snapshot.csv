@@ -1,0 +1,19 @@
+order_id,lane,shipping_mode,customer_segment,category,order_value,promised_days,actual_days
+DC-1944,LATAM-CENTRAL-AMERICA,Standard Class,Home Office,Golf Gloves,10,4,5
+DC-42882,AFRICA-EAST-AFRICA,Standard Class,Consumer,Fishing,1542,4,3
+DC-43362,AFRICA-EAST-AFRICA,Second Class,Consumer,Trade-In,15,2,3
+DC-44154,USCA-CANADA,Standard Class,Consumer,Electronics,28,4,5
+DC-44853,AFRICA-WEST-AFRICA,Second Class,Consumer,Golf Balls,16,2,4
+DC-44865,AFRICA-CENTRAL-AFRICA,First Class,Consumer,Fishing,1389,1,2
+DC-46237,USCA-CANADA,First Class,Home Office,Fishing,1448,1,2
+DC-47683,USCA-CANADA,Standard Class,Corporate,Fishing,1354,4,4
+DC-48684,AFRICA-EAST-AFRICA,Standard Class,Consumer,Cardio Equipment,1436,4,5
+DC-48818,AFRICA-WEST-AFRICA,Standard Class,Consumer,Cardio Equipment,1421,4,4
+DC-48974,AFRICA-CENTRAL-AFRICA,Standard Class,Consumer,Golf Balls,15,4,5
+DC-49817,AFRICA-CENTRAL-AFRICA,Standard Class,Home Office,Fishing,1423,4,3
+DC-50559,AFRICA-WEST-AFRICA,Standard Class,Corporate,Fishing,1519,4,5
+DC-52607,LATAM-CENTRAL-AMERICA,First Class,Consumer,Cardio Equipment,1681,1,2
+DC-59207,LATAM-CENTRAL-AMERICA,Standard Class,Consumer,Cardio Equipment,1663,4,3
+DC-68724,EUROPE-WESTERN-EUROPE,Standard Class,Consumer,Strength Training,2428,4,5
+DC-68821,EUROPE-WESTERN-EUROPE,Second Class,Corporate,Strength Training,2389,2,2
+DC-69280,EUROPE-WESTERN-EUROPE,Standard Class,Consumer,CDs ,8,4,6

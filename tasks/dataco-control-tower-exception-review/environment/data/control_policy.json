@@ -1,0 +1,41 @@
+{
+  "risk_bands": [
+    "critical",
+    "high",
+    "monitor"
+  ],
+  "actions": [
+    "mode_change",
+    "customer_notify",
+    "carrier_review",
+    "monitor"
+  ],
+  "decision_hierarchy": [
+    "service",
+    "cost",
+    "resilience"
+  ],
+  "workflow_phases": [
+    "plan",
+    "source",
+    "make",
+    "deliver",
+    "return"
+  ],
+  "owner_functions": {
+    "mode_change": "logistics",
+    "customer_notify": "customer_service",
+    "carrier_review": "transportation",
+    "monitor": "control_tower"
+  },
+  "risk_types": [
+    "carrier_lane_failure",
+    "service_failure",
+    "stable"
+  ],
+  "lane_mitigations": {
+    "carrier_lane_failure": "carrier_improvement_plan",
+    "service_failure": "customer_recovery_plan",
+    "stable": "monitor"
+  }
+}

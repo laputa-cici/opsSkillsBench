@@ -1,0 +1,4 @@
+customer_segment,target_otif,escalation_value
+Consumer,0.44,500
+Corporate,0.46,650
+Home Office,0.42,450

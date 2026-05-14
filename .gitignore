@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+.local_runtime/
+.local_results/
+.benchmark_runs/
+
+.pytest_cache/
+pytest-cache-files-*/
+
+mac_test.txt
+
+sources/datasets/**/raw/

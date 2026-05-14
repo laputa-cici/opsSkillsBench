@@ -1,0 +1,7 @@
+job_id,due_date,order_value,service_criticality
+J1,54,12000,high
+J2,55,7000,medium
+J3,59,15000,high
+J4,58,8500,medium
+J5,58,4200,low
+J6,50,11000,high

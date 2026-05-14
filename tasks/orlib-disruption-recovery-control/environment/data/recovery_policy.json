@@ -1,0 +1,19 @@
+{
+  "allowed_actions": [
+    "customer_escalation",
+    "overtime",
+    "resequencing",
+    "monitor"
+  ],
+  "service_priority": [
+    "high",
+    "medium",
+    "low"
+  ],
+  "bottleneck_method": "machine_load_plus_downtime_duration",
+  "decision_hierarchy": [
+    "customer_commitment",
+    "cost_efficiency",
+    "flexibility_speed"
+  ]
+}

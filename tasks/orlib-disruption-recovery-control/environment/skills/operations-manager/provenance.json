@@ -1,0 +1,24 @@
+{
+  "name": "operations-manager",
+  "status": "external_skill_md_only",
+  "imported_at_utc": "2026-04-07T09:05:00Z",
+  "marketplace": {
+    "name": "SkillsMP",
+    "url": "https://skillsmp.com/skills/theneoai-awesome-skills-skills-business-operations-manager-skill-md"
+  },
+  "upstream": {
+    "repository": "https://github.com/theneoai/awesome-skills",
+    "commit": "10d1e09e3907265e38ab1e9c3d6e38efd6a41611",
+    "path": "skills/business/operations-manager/SKILL.md"
+  },
+  "license": {
+    "file": "LICENSE",
+    "signal": "MIT License with Attribution Requirement",
+    "required_attribution": "Based on Awesome Skills by neo.ai (lucas_hsueh@hotmail.com)"
+  },
+  "notes": [
+    "Vendored the upstream SKILL.md file for benchmark provided-skill testing.",
+    "Reference files named in the skill were not imported for this first runnable task pass.",
+    "Use as a provided skill candidate for operations control, workflow ownership, KPI, bottleneck, and continuous-improvement tasks."
+  ]
+}

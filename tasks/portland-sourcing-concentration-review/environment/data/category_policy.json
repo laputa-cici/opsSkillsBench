@@ -1,0 +1,17 @@
+{
+  "spend_impact_threshold": 75000000,
+  "high_supply_risk_criticality": 4,
+  "high_concentration_share": 0.55,
+  "quadrant_strategy": {
+    "strategic": "partnership_development",
+    "leverage": "competitive_bidding",
+    "bottleneck": "ensure_supply_and_buffer",
+    "non_critical": "process_efficiency"
+  },
+  "mitigation_by_antipattern": {
+    "single_sourcing": "develop_second_source",
+    "price_only_focus": "run_total_cost_review",
+    "supplier_fragmentation": "consolidate_tail_spend",
+    "none": "monitor"
+  }
+}
