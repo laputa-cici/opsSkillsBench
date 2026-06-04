@@ -6,7 +6,7 @@
 
 - 这 4 个目录现在保留为场景级任务和历史实验兼容入口。
 - 新的正式扩展方向是 `tasks/<problem-domain>/<task-id>/` 下的原子题。
-- 当前已从这 4 个场景级任务拆出 12 个可独立运行、独立计数的原子题。
+- 当前已从这 4 个场景级任务和 fulfillment 扩展 backlog 中拆出 16 个可独立运行、独立计数的原子题。
 - 详情见 [task-structure-redesign.md](task-structure-redesign.md) 和 [atomic-task-backlog.zh-CN.md](atomic-task-backlog.zh-CN.md)。
 
 可以把这 4 个任务理解成 4 类典型运营问题：

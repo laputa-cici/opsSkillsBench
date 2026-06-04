@@ -1,0 +1,9 @@
+order_id,sku,qty,customer_segment,order_value,is_expedited,promised_hours,ship_to_zone
+O1001,SKU-A,8,premium,920,false,48,North
+O1002,SKU-B,6,standard,180,false,72,South
+O1003,SKU-C,12,premium,1440,true,36,East
+O1004,SKU-D,5,standard,95,false,48,West
+O1005,SKU-A,15,premium,1725,false,24,South
+O1006,SKU-E,4,standard,240,false,48,North
+O1007,SKU-B,14,premium,560,true,24,East
+O1008,SKU-F,3,standard,75,false,72,West

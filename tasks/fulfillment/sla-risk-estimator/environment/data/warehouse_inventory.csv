@@ -1,0 +1,16 @@
+warehouse_id,sku,on_hand,reserved,damaged
+W1,SKU-A,20,3,1
+W1,SKU-B,4,0,0
+W1,SKU-C,5,0,0
+W1,SKU-D,8,1,0
+W1,SKU-E,2,0,0
+W2,SKU-A,10,0,0
+W2,SKU-B,10,0,0
+W2,SKU-C,8,0,0
+W2,SKU-D,2,0,0
+W2,SKU-E,6,1,0
+W3,SKU-A,5,0,0
+W3,SKU-B,8,0,0
+W3,SKU-C,10,0,0
+W3,SKU-D,5,0,0
+W3,SKU-E,1,0,0

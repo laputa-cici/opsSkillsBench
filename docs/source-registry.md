@@ -1,6 +1,6 @@
 # External Source Registry
 
-Last updated: 2026-04-08
+Last updated: 2026-06-04
 
 This is the active registry for building a `management-operations` SkillBench from external skill markets and public operations datasets. The old synthetic pilot tasks have been removed from `tasks/`.
 
@@ -30,6 +30,9 @@ Only vendor a skill after checking the upstream package and license. Marketplace
 | P0 | OR-Library Job Shop Scheduling | OR-Library: https://people.brunel.ac.uk/~mastjjb/jeb/orlib/jobshopinfo.html | Classic job-shop scheduling instances for machine-verifiable capacity and schedule repair tasks. | Imported `jobshop1.txt` locally under ignored `sources/datasets/orlib-jobshop/raw/`; committed derived `ft06` slice for `orlib-disruption-recovery-control`. |
 | P1 | Open Contracting Data Registry | https://data.open-contracting.org/ | Public procurement, contracting, supplier concentration, award anomalies. | Use after selecting a specific publisher dataset. |
 | P1 | City of Portland procurement dataset | Open Contracting registry publication: https://data.open-contracting.org/en/publication/155 | Purchases/contracts since 2015, supplier concentration and purchasing audit. | Imported all-time CSV package locally under ignored `sources/datasets/portland-procurement/raw/`; committed derived slice for `portland-sourcing-concentration-review`. |
+| P1 | Brazilian E-Commerce Public Dataset by Olist | Kaggle listing: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce | Orders, fulfillment timing, sellers, customers, products, and logistics SLA analysis. | Candidate source for expanding fulfillment allocation tasks beyond the committed prototype slice. |
+| P1 | Instacart Market Basket Analysis | Kaggle listing: https://www.kaggle.com/c/instacart-market-basket-analysis | Order baskets, SKU demand patterns, substitutions, picking and replenishment variants. | Candidate source for inventory/fulfillment variants; verify license and raw-data access before import. |
+| P2 | Prototype Olist-style fulfillment slice | Committed task data only | Warehouse inventory, capacity, transit, SLA and split-order decisions matching public e-commerce fulfillment schemas. | Committed compact prototype slice for `fulfillment/nearest-feasible-dc`, `fulfillment/capacity-aware-allocation`, `fulfillment/sla-risk-estimator`, and `fulfillment/split-order-decision`; replace or supplement with verified public-data slices before paper freeze. |
 
 ## Import Rules
 

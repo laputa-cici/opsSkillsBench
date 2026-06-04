@@ -34,7 +34,7 @@ These tasks are split from scenario-level verifier checkpoints and count as stan
 | Domain | Tasks |
 | --- | ---: |
 | `inventory` | 3 |
-| `fulfillment` | 3 |
+| `fulfillment` | 7 |
 | `procurement` | 3 |
 | `scheduling` | 3 |
 
@@ -48,6 +48,10 @@ These tasks are split from scenario-level verifier checkpoints and count as stan
 | `fulfillment/dataco-order-risk-actions` | `dataco-control-tower-exception-review` | `control_tower_actions.csv` |
 | `fulfillment/dataco-lane-risk-register` | `dataco-control-tower-exception-review` | `lane_risk_register.json` |
 | `fulfillment/dataco-scorecard-summary` | `dataco-control-tower-exception-review` | `scorecard_summary.json` |
+| `fulfillment/nearest-feasible-dc` | `dataco-control-tower-exception-review` | `warehouse_assignment.csv` |
+| `fulfillment/capacity-aware-allocation` | `dataco-control-tower-exception-review` | `capacity_adjusted_assignment.csv` |
+| `fulfillment/sla-risk-estimator` | `dataco-control-tower-exception-review` | `sla_risk_register.json` |
+| `fulfillment/split-order-decision` | `dataco-control-tower-exception-review` | `split_order_plan.csv` |
 | `procurement/portland-kraljic-category-matrix` | `portland-sourcing-concentration-review` | `kraljic_category_matrix.csv` |
 | `procurement/portland-supplier-action-plan` | `portland-sourcing-concentration-review` | `supplier_action_plan.csv` |
 | `procurement/portland-procurement-risk-register` | `portland-sourcing-concentration-review` | `procurement_risk_register.json` |

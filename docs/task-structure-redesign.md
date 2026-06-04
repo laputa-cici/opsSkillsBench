@@ -1,6 +1,6 @@
 # Task Structure Redesign
 
-Last updated: 2026-05-14
+Last updated: 2026-06-04
 
 ## Problem
 
@@ -31,7 +31,7 @@ The runner discovers tasks recursively, so future domains can add dozens of task
 | Domain | Scope | Current atomic tasks |
 | --- | --- | ---: |
 | `inventory` | Replenishment, stockout risk, inventory exception handling | 3 |
-| `fulfillment` | Order allocation, delivery risk, control-tower actions | 3 |
+| `fulfillment` | Order allocation, delivery risk, control-tower actions | 7 |
 | `procurement` | Sourcing strategy, supplier concentration, risk registers | 3 |
 | `scheduling` | Job-shop recovery, capacity, bottleneck action planning | 3 |
 
@@ -47,6 +47,12 @@ The first restructuring pass split the existing scenario verifier checkpoints in
 | `orlib-disruption-recovery-control` | recovery schedule, schedule metrics, bottleneck/action plan |
 
 The old scenario-level tasks remain in place for continuity with prior experiment logs.
+
+The second restructuring pass added four prototype fulfillment allocation tasks from the operations backlog:
+
+| Domain | New atomic surfaces |
+| --- | --- |
+| `fulfillment` | nearest feasible distribution center, capacity-aware allocation, SLA risk estimation, split-order decision |
 
 ## Harness Changes
 

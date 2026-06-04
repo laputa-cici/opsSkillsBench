@@ -1,0 +1,24 @@
+{
+  "capacity_guardrail_load_index": 0.85,
+  "sla_high_buffer_hours": 12,
+  "sla_premium_buffer_hours": 16,
+  "expedite_buffer_hours": 8,
+  "standard_handling_hours": 8,
+  "constrained_handling_hours": 16,
+  "split_max_shipments": 2,
+  "split_cost_limit": 24,
+  "allowed_actions": [
+    "ALLOCATE",
+    "EXPEDITE",
+    "SPLIT",
+    "REVIEW"
+  ],
+  "reason_codes": [
+    "NEAREST_FEASIBLE_DC",
+    "CAPACITY_BALANCED_DC",
+    "SLA_RISK",
+    "SPLIT_REQUIRED",
+    "NO_FEASIBLE_INVENTORY",
+    "DATA_REVIEW"
+  ]
+}

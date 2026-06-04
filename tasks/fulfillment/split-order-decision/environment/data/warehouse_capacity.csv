@@ -1,0 +1,4 @@
+warehouse_id,pick_capacity_remaining,load_index
+W1,20,0.72
+W2,12,0.88
+W3,25,0.55

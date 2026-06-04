@@ -28,7 +28,7 @@ The benchmark now separates problem domains from individual benchmark items.
 - Scalable atomic tasks live under `tasks/<problem-domain>/<task-id>/`.
 - A runnable task is any directory, at any depth under `tasks/`, that contains `task.toml`.
 
-This means a single operations problem domain can contain many independently counted benchmark tasks. For example, `fulfillment` now contains separate tasks for order actions, lane risk registers, and scorecard summaries instead of hiding them as subtests inside one large task.
+This means a single operations problem domain can contain many independently counted benchmark tasks. For example, `fulfillment` now contains separate tasks for order actions, lane risk registers, scorecard summaries, warehouse allocation, capacity-aware assignment, SLA risk, and split-order decisions instead of hiding them as subtests inside one large task.
 
 ## Current Problem Domains
 
@@ -44,7 +44,7 @@ Current atomic task count:
 | Problem domain | Atomic tasks |
 | --- | ---: |
 | `inventory` | 3 |
-| `fulfillment` | 3 |
+| `fulfillment` | 7 |
 | `procurement` | 3 |
 | `scheduling` | 3 |
 

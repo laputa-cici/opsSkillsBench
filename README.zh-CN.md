@@ -11,7 +11,7 @@
 
 ## 当前状态
 
-截至 `2026-04-08`：
+截至 `2026-06-04`：
 
 - 旧的 synthetic pilot 任务、synthetic skills 和本地运行产物已经从工作空间中清理。
 - 当前 `online-retail-replenishment-review` 已经跑通过 agent 测试链路，但四次 pilot 表明它主要是在测 CSV 处理，不适合作为论文里的 skill-sensitive 主任务。
@@ -45,7 +45,7 @@
 - 新的可扩展原子题放在 `tasks/<problem-domain>/<task-id>/`。
 - runner 会递归发现 `tasks/` 下任意深度包含 `task.toml` 的目录，并把它计为一个独立题目。
 
-这样一个问题域下面可以有很多独立题目。例如 `fulfillment` 领域里，订单风险动作、线路风险登记、scorecard 汇总会作为三个独立 task 计数，而不是藏在一个大题的多个子测试里。
+这样一个问题域下面可以有很多独立题目。例如 `fulfillment` 领域里，订单风险动作、线路风险登记、scorecard 汇总、仓库分配、产能约束分配、SLA 风险和拆单决策会作为独立 task 计数，而不是藏在一个大题的多个子测试里。
 
 ## 当前问题域
 
@@ -61,7 +61,7 @@
 | 问题域 | 原子题数量 |
 | --- | ---: |
 | `inventory` | 3 |
-| `fulfillment` | 3 |
+| `fulfillment` | 7 |
 | `procurement` | 3 |
 | `scheduling` | 3 |
 

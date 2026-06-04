@@ -1,0 +1,13 @@
+warehouse_id,zone,transit_hours,cost_per_shipment
+W1,North,12,8
+W1,South,36,14
+W1,East,30,16
+W1,West,40,18
+W2,North,30,12
+W2,South,14,8
+W2,East,24,13
+W2,West,32,15
+W3,North,28,11
+W3,South,26,10
+W3,East,16,9
+W3,West,18,8
