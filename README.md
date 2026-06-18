@@ -75,6 +75,7 @@ tasks/<problem-domain>/<task-id>/
 ## Source Registry
 
 External skill and dataset candidates are tracked in [docs/source-registry.md](docs/source-registry.md).
+The current testing task matrix is tracked in [docs/experiment-matrix.zh-CN.md](docs/experiment-matrix.zh-CN.md).
 
 Skill markets under review:
 

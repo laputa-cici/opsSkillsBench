@@ -11,7 +11,7 @@
 
 ## 当前状态
 
-截至 `2026-06-04`：
+截至 `2026-06-18`：
 
 - 旧的 synthetic pilot 任务、synthetic skills 和本地运行产物已经从工作空间中清理。
 - 当前 `online-retail-replenishment-review` 已经跑通过 agent 测试链路，但四次 pilot 表明它主要是在测 CSV 处理，不适合作为论文里的 skill-sensitive 主任务。
@@ -19,6 +19,7 @@
 - 外部技能与数据集候选记录在 [docs/source-registry.md](docs/source-registry.md)。
 - 任务重设计结论见 [docs/task-redesign-after-pilot.md](docs/task-redesign-after-pilot.md)。
 - 当前任务中文总览见 [docs/task-catalog.zh-CN.md](docs/task-catalog.zh-CN.md)。
+- 当前测试题目矩阵见 [docs/experiment-matrix.zh-CN.md](docs/experiment-matrix.zh-CN.md)。
 
 ## 研究设计
 
